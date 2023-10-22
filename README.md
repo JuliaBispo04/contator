@@ -1,43 +1,18 @@
-import java.util.Scanner;
+## Getting Started
 
-public class Contador {
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        try (Scanner terminal = new Scanner(System.in)) {
-            System.out.println("Digite o primeiro parâmetro");
-            int parametroUm = terminal.nextInt();
-            System.out.println("Digite o segundo parâmetro");
-            int parametroDois = terminal.nextInt();
+Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-            try {
-                contar(parametroUm, parametroDois);
-            }catch (ParametrosInvalidosException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
+## Folder Structure
 
-    /**
-     * @param parametroUm
-     * @param parametroDois
-     * @throws ParametrosInvalidosException
-     */
-    static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
-        if (parametroUm > parametroDois) {
-            throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
-        }
+The workspace contains two folders by default, where:
 
-        int contagem = parametroDois - parametroUm;
-        for (int i = 1; i <= contagem; i++) {
-            System.out.println("Imprimindo o número " + i);
-        }
-    }
-}
+- `src`: the folder to maintain sources
+- `lib`: the folder to maintain dependencies
 
-class ParametrosInvalidosException extends Exception {
-    public ParametrosInvalidosException(String message) {
-        super(message);
-    }
-}
+Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+
+> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+
+## Dependency Management
+
+The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
